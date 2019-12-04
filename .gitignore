@@ -26,6 +26,5 @@ hs_err_pid*
 
 .gitignore
 .idea/
-eureka-server/target/
-springcloud.iml
 target/
+*.iml
