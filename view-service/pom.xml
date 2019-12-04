@@ -9,10 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>data-service</artifactId>
+    <artifactId>view-service</artifactId>
 
-    <name>data-service</name>
-    <!-- FIXME change it to the project's website -->
+    <name>view-service</name>
     <url>http://www.example.com</url>
 
     <properties>
@@ -22,15 +21,17 @@
     </properties>
 
     <dependencies>
-        <!--eureka 客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--web 服务 提供控制层-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
     </dependencies>
 </project>
