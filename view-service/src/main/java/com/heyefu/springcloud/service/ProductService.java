@@ -1,5 +1,6 @@
 package com.heyefu.springcloud.service;
 
+import com.heyefu.springcloud.client.ProductFeignClient;
 import com.heyefu.springcloud.client.ProductRibbonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +20,16 @@ public class ProductService {
     @Autowired
     ProductRibbonClient productClientRibbon;
 
+    @Autowired
+    ProductFeignClient feignClient;
+
     public List listProducts(){
         return productClientRibbon.listProdcuts();
 
+    }
+
+    public List listProductsFromFeign() {
+
+        return feignClient.listProdcuts();
     }
 }

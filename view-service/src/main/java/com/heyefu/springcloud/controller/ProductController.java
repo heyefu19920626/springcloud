@@ -27,4 +27,11 @@ public class ProductController {
         m.addAttribute("ps", ps);
         return "products";
     }
+
+    @RequestMapping("/productsFeign")
+    public Object productsFromFeign(Model model) {
+        List ps = productService.listProductsFromFeign();
+        model.addAttribute("ps", ps);
+        return "products";
+    }
 }
