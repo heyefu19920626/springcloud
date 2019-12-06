@@ -14,7 +14,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @EnableEurekaServer
 public class EurekaServerApplication {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Eureka Server Center");
         int port = 8761;
 
         if (!NetUtil.isUsableLocalPort(port)) {

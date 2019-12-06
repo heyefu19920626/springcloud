@@ -1,5 +1,6 @@
 package com.heyefu.springcloud;
 
+import brave.sampler.Sampler;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.NetUtil;
@@ -7,6 +8,7 @@ import cn.hutool.core.util.NumberUtil;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
@@ -23,7 +25,7 @@ import java.util.concurrent.TimeoutException;
 @EnableEurekaClient
 public class ProductServiceApplication {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Data Service");
 
         int port;
         int defaultPort = 8001;
@@ -58,5 +60,18 @@ public class ProductServiceApplication {
         }
 
         new SpringApplicationBuilder(ProductServiceApplication.class).properties("server.port=" + port).run(args);
+    }
+
+    /**
+     * Description:
+     * <p>
+     * 配置抽样策略,ALWAYS_SAMPLE表示持续抽样
+     *
+     * @return brave.sampler.Sampler
+     * @author heyefu 9:43 2019/12/6
+     **/
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
     }
 }

@@ -1,5 +1,6 @@
 package com.heyefu.springcloud;
 
+import brave.sampler.Sampler;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.NetUtil;
@@ -67,5 +68,10 @@ public class ViewServiceApplication {
     @LoadBalanced
     RestTemplate restTemplate() {
         return new RestTemplate();
+    }
+
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
     }
 }
