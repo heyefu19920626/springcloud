@@ -2,6 +2,7 @@ package com.heyefu.springcloud.controller;
 
 import com.heyefu.springcloud.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,10 +22,14 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @RequestMapping("/products")
+    @Value("${version}")
+    String version;
+
+    @RequestMapping("/productsRibbon")
     public Object products(Model m) {
         List ps = productService.listProducts();
         m.addAttribute("ps", ps);
+        m.addAttribute("version", version);
         return "products";
     }
 
@@ -32,6 +37,7 @@ public class ProductController {
     public Object productsFromFeign(Model model) {
         List ps = productService.listProductsFromFeign();
         model.addAttribute("ps", ps);
+        model.addAttribute("version", version);
         return "products";
     }
 }

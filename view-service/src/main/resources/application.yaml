@@ -1,8 +1,6 @@
-eureka:
-  client:
-    serviceUrl:
-      #      服务注册地址
-      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8010
+
 spring:
   application:
     #    注册的服务名称
@@ -17,3 +15,8 @@ spring:
     mode: HTML5
     servlet:
       content-type: text/html
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+      exclude: WEB-INF/**

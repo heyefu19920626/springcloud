@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    config:
+      # label 表示 git上的分支
+      label: master
+      discovery:
+        enabled:  true
+        # 对应配置中心的 spring.application.name
+        serviceId:  config-server
+      #  name 表示配置文件的 {application} 部分
+      name: spring
+      # profile 表示配置文件的 {profile}部分
+      profile: cloud
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
