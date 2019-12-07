@@ -1,4 +1,9 @@
 spring:
+  #  profiles:
+  # 添加这个属性可以读取多个文件
+  # 加入这个属性，需要注释spring.cloud.config.profile属性
+  # 最后读取的就是{application}-{dev}与{application}-{prod}文件
+  #    active: dev,prod
   cloud:
     config:
       # label 表示 git上的分支

@@ -20,3 +20,10 @@ spring:
       enabled: true  #设置开启热部署
       additional-paths: src/main/java #重启目录
       exclude: WEB-INF/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 将配置更新的接口暴露出来
+        include: refresh
