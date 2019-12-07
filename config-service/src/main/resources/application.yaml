@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      #      label表示分支
+      label: master
+      server:
+        git:
+          #          uri表示git地址
+          uri: https://github.com/heyefu19920626/MarkdownNotes/
+          #          目录
+          searchPaths: java/Spring-Cloud
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
