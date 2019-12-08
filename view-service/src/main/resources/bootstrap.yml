@@ -16,6 +16,10 @@ spring:
       name: spring
       # profile 表示配置文件的 {profile}部分
       profile: cloud
+    bus:
+      enabled: true
+      trace:
+        enabled: true
 eureka:
   client:
     serviceUrl:

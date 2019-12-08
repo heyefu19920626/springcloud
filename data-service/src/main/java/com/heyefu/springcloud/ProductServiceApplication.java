@@ -38,7 +38,6 @@ public class ProductServiceApplication {
                 String strPort = scanner.nextLine();
                 if (!NumberUtil.isInteger(strPort)) {
                     System.out.println("只能是数字");
-                    continue;
                 } else {
                     p = Convert.toInt(strPort);
                     scanner.close();

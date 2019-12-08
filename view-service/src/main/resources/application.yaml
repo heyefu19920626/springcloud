@@ -1,5 +1,5 @@
-server:
-  port: 8010
+#server:
+#  port: 8010
 
 spring:
   application:
@@ -15,15 +15,24 @@ spring:
     mode: HTML5
     servlet:
       content-type: text/html
-  devtools:
-    restart:
-      enabled: true  #设置开启热部署
-      additional-paths: src/main/java #重启目录
-      exclude: WEB-INF/**
-
+  #  devtools:
+  #    restart:
+  #      enabled: true  #设置开启热部署
+  #      additional-paths: src/main/java #重启目录
+  #      exclude: WEB-INF/**
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 management:
   endpoints:
     web:
       exposure:
         # 将配置更新的接口暴露出来
-        include: refresh
+        # include: refresh
+        # * 这个符号暴露所有接口
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
