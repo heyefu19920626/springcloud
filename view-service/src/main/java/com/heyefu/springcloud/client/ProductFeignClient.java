@@ -12,7 +12,7 @@ import java.util.List;
  * Create in: 2019-12-05
  * Time: 22:29
  **/
-@FeignClient(value = "PRODUCT-DATA-SERVICE")
+@FeignClient(value = "PRODUCT-DATA-SERVICE", fallback = ProductFeignClientHystrix.class)
 public interface ProductFeignClient {
 
     @GetMapping("/products")
