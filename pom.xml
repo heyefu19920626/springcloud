@@ -14,6 +14,7 @@
         <module>view-service</module>
         <module>config-service</module>
         <module>hystrix-dashboard</module>
+        <module>hystrix-turbine</module>
     </modules>
 
     <name>springcloud</name>
