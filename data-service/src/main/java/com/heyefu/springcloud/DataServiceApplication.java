@@ -23,7 +23,7 @@ import java.util.concurrent.TimeoutException;
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class ProductServiceApplication {
+public class DataServiceApplication {
     public static void main(String[] args) {
         System.out.println("Data Service");
 
@@ -58,7 +58,7 @@ public class ProductServiceApplication {
             System.exit(1);
         }
 
-        new SpringApplicationBuilder(ProductServiceApplication.class).properties("server.port=" + port).run(args);
+        new SpringApplicationBuilder(DataServiceApplication.class).properties("server.port=" + port).run(args);
     }
 
     /**

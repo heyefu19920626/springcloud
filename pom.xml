@@ -13,6 +13,7 @@
         <module>data-service</module>
         <module>view-service</module>
         <module>config-service</module>
+        <module>hystrix-dashboard</module>
     </modules>
 
     <name>springcloud</name>
